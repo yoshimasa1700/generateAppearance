@@ -22,7 +22,7 @@ void pBar(int p,int maxNum, int width){
 int main(int argc, char *argv[]){
   CConfig conf;
   std::string inputPath, outputPath;
-  int outputNum = 1000;
+  int outputNum = 100;
   
   //read and check argument
   if(argc < 2) {
@@ -124,17 +124,17 @@ int main(int argc, char *argv[]){
   for(unsigned int i = 0; i < posSet.size(); ++i){
     filelist << modelName[i] << std::endl;
     std::ofstream ofs((outputPath + PATH_SEP + modelName[i] + PATH_SEP + conf.traindatalist).c_str());
-    ofs << outputNum;
+    ofs << outputNum << std::endl;
     
     for(unsigned int j = 0; j < posSet[i].size(); ++j){
       std::stringstream imageName;
       imageName << modelName[i] << "_" << j;
-      ofs << imageName.str() + "_crop.png";
-      ofs << imageName.str() + "_depthcrop.png";
-      ofs << "nodata";
-      ofs << modelName[i];
+      ofs << imageName.str() + "_crop.png ";
+      ofs << imageName.str() + "_depthcrop.png ";
+      ofs << " nodata ";
+      ofs << modelName[i] << " ";
       for(int k = 0; k < 3; ++k)
-	ofs << posSet[i][j]->getParam()->getAngle()[k];
+	ofs << posSet[i][j]->getParam()->getAngle()[k] << " ";
       ofs << std::endl;
       
       //      std::cout << posSet[i][j]->getModelPath() << std::endl;
