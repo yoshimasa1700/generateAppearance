@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- Path to trees -->
+  <treepath>trees/treetable</treepath>
+  <!-- Number of trees -->
+<ntree>20</ntree>
+<!-- Patch width -->
+<pwidth>20</pwidth>
+<!-- Patch height -->
+n<pheight>20</pheight>
+<!-- Path to images-->
+<!--<imgpath>example/testimage</imgpath>-->
+<!-- Image name list -->
+<imgnamelist>example/test.txt</imgnamelist>
+<!-- Extract features -->
+<efeatures>1</efeatures>
+<!-- Scales -->
+<scales>
+  <s1>1</s1>
+</scales>
+<!-- Ratios -->
+<ratio><r1>1</r1><r2>1</r2></ratio>
+<!-- Output path-->
+<outpath>example/detect</outpath>
+<!-- Scale factor for output image-->
+<sfactor>20</sfactor>
+<!-- Path to training images -->
+<trainimgpath>dataset</trainimgpath>
+<!-- Train data file name -->
+<traindataname>trainData.txt</traindataname>
+<!-- Train image per tree-->
+<trainimagepertree>40</trainimagepertree>
+<!-- min sample number-->
+<minsample>5</minsample>
+<!-- max depth of tree-->
+<maxdepth>15</maxdepth>
+<!-- feature channel number-->
+<featurechannel>2</featurechannel>
+<!-- extract patch ratio-->
+<patchratio>2000</patchratio>
+<!-- Stride -->
+<stride>20</stride>
+<!-- Offset of tree-->
+<offTree>0</offTree>
+<!-- test data path -->
+<testpath>testdata</testpath>
+<testdataname>testData.txt</testdataname>
+<classdatabasename>classDatabase</classdatabasename>
+<!--learning mode 1:depth 2:rgb 0:rgbd-->
+<learningmode>0</learningmode>
+<testmode>1</testmode>
+<detectthreshold>3.0</detectthreshold>
+<traindatalistname>dataListInst2.0.txt</traindatalistname>
+<testdatalistname>testDataList.txt</testdatalistname>
+<showgrandtruth>1</showgrandtruth>
+<negativedatapath>negdata</negativedatapath>
+<negativedatafolderlist>negDataFolderList.txt</negativedatafolderlist>
+<negativedatalist>negDataList.txt</negativedatalist>
+<negativemode>1</negativemode>
+<posnegpatchratio>3.0</posnegpatchratio>
+<activepatchratio>1.0</activepatchratio>
+<mindistance>350</mindistance>
+<maxdistance>1400</maxdistance>
+<numberOfTrials>100</numberOfTrials>
+<crossvalidationmode>1</crossvalidationmode>
+<clusterNumLimit>20</clusterNumLimit>
+<!-- haar-like : 0, HOG : 1, rotated haar-like : 2-->
+<rgbFeature>2</rgbFeature>
+<depthFeature>2</depthFeature>
+<paramradius>3</paramradius>
+<modellistfolder>models</modellistfolder>
+<modellistname>models.txt</modellistname>
+<modellearningmode>1</modellearningmode>
+</root>

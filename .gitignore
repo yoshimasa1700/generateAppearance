@@ -1,0 +1,16 @@
+libHFMD_core*
+cmake_install.cmake
+libglm*
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+Makefile
+.DS_Store
+*.swp
+learning
+objectposeestimation
+HFMD_eval.creator.user*
+#*
+dataset/
+install_manifest.txt
+generateAppearance

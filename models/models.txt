@@ -1,0 +1,4 @@
+3
+spray/spray.obj spray
+clock/clock3.obj clock
+ornament/test3.obj ornament_3
