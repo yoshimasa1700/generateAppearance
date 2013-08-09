@@ -22,7 +22,7 @@ void pBar(int p,int maxNum, int width){
 int main(int argc, char *argv[]){
   CConfig conf;
   std::string inputPath, outputPath;
-  int outputNum = 100;
+  int outputNum = 10;
   
   //read and check argument
   if(argc < 2) {
@@ -34,15 +34,15 @@ int main(int argc, char *argv[]){
   if(argc < 3)
     inputPath = "./models";
   else
-    conf.off_tree = atoi(argv[2]);
+    inputPath = argv[2];
   
   if(argc < 4)
     outputPath = "./dataset";
   else
-    conf.off_tree = atoi(argv[2]);
+    outputPath = argv[3];
 
   if(argc > 5)
-    outputNum = atoi(argv[3]);
+    outputNum = atoi(argv[4]);
 
   //init gl
   glutInit(&argc, argv);
