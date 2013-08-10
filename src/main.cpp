@@ -22,7 +22,7 @@ void pBar(int p,int maxNum, int width){
 int main(int argc, char *argv[]){
   CConfig conf;
   std::string inputPath, outputPath;
-  int outputNum = 10;
+  int outputNum = 100;
   
   //read and check argument
   if(argc < 2) {
