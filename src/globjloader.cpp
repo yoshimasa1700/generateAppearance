@@ -412,8 +412,8 @@ void CGlObjLoader::Display(void)
   //glTranslatef(0, 0, 0.3);	/* to center object down Z */
   glPopMatrix();
 
-  //glFlush();
-  glutSwapBuffers();
+  glFlush();
+  //glutSwapBuffers();
 
 
   frontBuffer =  cv::Mat(480,640,CV_8UC3);
