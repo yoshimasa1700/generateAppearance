@@ -140,6 +140,16 @@ int main(int argc, char *argv[]){
       //      std::cout << posSet[i][j]->getModelPath() << std::endl;
       posSet[i][j]->loadImage(conf, posSet[i][j]->getModelPath(), posSet[i][j]->getParam());
 
+      cv::Mat showDepth;
+      showDepth = cv::Mat(posSet[i][j]->img[1]->rows,posSet[i][j]->img[1]->cols,CV_8U );
+
+      posSet[i][j]->img[1]->convertTo(showDepth, CV_8U, 255.0 / 1000);
+
+      //cv::namedWindow("test");
+      //cv::imshow("test", showDepth);
+      //cv::waitKey(0);
+      //cv::destroyWindow("test");
+
       cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_crop.png", *posSet[i][j]->img[0]);
       cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_depthcrop.png", *posSet[i][j]->img[1]);
 
