@@ -1,7 +1,7 @@
 #include "globjloader.h"
 
 CGlObjLoader::CGlObjLoader(){
-    _left = 0.0;		/* ortho view volume params */
+  _left = 0.0;		/* ortho view volume params */
   _right = 0.0;
   _bottom = 0.0;
   _top = 0.0;
@@ -28,10 +28,10 @@ CGlObjLoader::CGlObjLoader(){
     mat_diffuse[i] = 0.8;
     mat_specular[i] = 1.0;
   }
-    light_position[3] = 0.0;
-    mat_ambient[3] = 1.0;
-    mat_diffuse[3] = 1.0;
-    high_shininess[0] = 100.0;
+  light_position[3] = 0.0;
+  mat_ambient[3] = 1.0;
+  mat_diffuse[3] = 1.0;
+  high_shininess[0] = 100.0;
   
   
 
@@ -391,7 +391,7 @@ void CGlObjLoader::Display(void)
   glPushMatrix();
 
   glLoadIdentity();
-  glTranslatef(0, 0, -0.6);	/* to center object down Z */
+  glTranslatef(0, 0, -5);	/* to center object down Z */
 
 
 
@@ -412,8 +412,8 @@ void CGlObjLoader::Display(void)
   //glTranslatef(0, 0, 0.3);	/* to center object down Z */
   glPopMatrix();
 
-  glFlush();
-  //glutSwapBuffers();
+  //glFlush();
+  glutSwapBuffers();
 
 
   frontBuffer =  cv::Mat(480,640,CV_8UC3);

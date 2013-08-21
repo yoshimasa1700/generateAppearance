@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
 
   //init gl
   glutInit(&argc, argv);
-  glutInitDisplayMode(GLUT_RGB | GLUT_DEPTH);//GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+  glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
   glutInitWindowSize(640, 480);	/*  Window Size If We Start In Windowed Mode */
   glutCreateWindow("Wavefront Obj File Viewer");
 
@@ -85,13 +85,10 @@ int main(int argc, char *argv[]){
     std::string tempClass;
     modelList >> tempClass;
     modelName[i] = tempClass;
-
-    //    std::cout << modelName[i] << std::endl;
   }
 
   string execstr = "mkdir -p ";
   for(unsigned int i = 0; i < modelName.size() ; ++i){
-    //    std::cout << modelName[i] << std::endl;
     system((execstr + outputPath + PATH_SEP + modelName[i]).c_str());
   }
   
@@ -109,10 +106,7 @@ int main(int argc, char *argv[]){
       posTemp->setCenterPoint(cv::Point(320,240));
 
       posSet[j][i] = posTemp;
-      //posSet[j * conf.imagePerTree + i] = posTemp;
-      ///	    std::cout << posSet[j*coni].getModelPath() << std::endl;
     }
-    
   }
   //  std::cout << std::endl;
   modelList.close();
@@ -149,6 +143,12 @@ int main(int argc, char *argv[]){
       //cv::imshow("test", showDepth);
       //cv::waitKey(0);
       //cv::destroyWindow("test");
+
+      cv::Mat geta = cv::Mat::ones(posSet[i][j]->img[1]->rows, posSet[i][j]->img[1]->cols,CV_16UC1) * 350;
+
+      std::cout << "kokoka?" << std::endl;
+      *posSet[i][j]->img[1] += geta;
+      std::cout << "kokoya!" << std::endl;
 
       cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_crop.png", *posSet[i][j]->img[0]);
       cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_depthcrop.png", *posSet[i][j]->img[1]);
