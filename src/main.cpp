@@ -52,7 +52,7 @@ int main(int argc, char *argv[]){
 
   //create appearance
   std::vector<std::vector<CPosDataset*> > posSet;
-  //  CGlObjLoader obj;
+  std::vector<std::string> instName(0);
 
   std::vector<std::string> modelPath(0);
   std::vector<std::string> modelName(0);
@@ -85,6 +85,8 @@ int main(int argc, char *argv[]){
     std::string tempClass;
     modelList >> tempClass;
     modelName[i] = tempClass;
+    modelList >> tempClass;
+    instName.push_back(tempClass);
   }
 
   string execstr = "mkdir -p ";
@@ -118,8 +120,11 @@ int main(int argc, char *argv[]){
   for(unsigned int i = 0; i < posSet.size(); ++i){
     filelist << modelName[i] << std::endl;
     std::ofstream ofs((outputPath + PATH_SEP + modelName[i] + PATH_SEP + conf.traindatalist).c_str());
+    std::ofstream ofs2((outputPath + PATH_SEP + modelName[i] + PATH_SEP + "dataListInst2.0.txt").c_str());
+
     ofs << outputNum << std::endl;
-    
+    ofs2 << outputNum << std::endl;
+
     for(unsigned int j = 0; j < posSet[i].size(); ++j){
       std::stringstream imageName;
       imageName << modelName[i] << "_" << j;
@@ -127,9 +132,18 @@ int main(int argc, char *argv[]){
       ofs << imageName.str() + "_depthcrop.png ";
       ofs << " nodata ";
       ofs << modelName[i] << " ";
-      for(int k = 0; k < 3; ++k)
+
+      ofs2 << imageName.str() + "_crop.png ";
+      ofs2 << imageName.str() + "_depthcrop.png ";
+      ofs2 << " nodata ";
+      ofs2 << instName[i] << " ";
+
+      for(int k = 0; k < 3; ++k){
 	ofs << posSet[i][j]->getParam()->getAngle()[k] << " ";
+	ofs2 << posSet[i][j]->getParam()->getAngle()[k] << " ";
+      }
       ofs << std::endl;
+      ofs2 << std::endl;
       
       //      std::cout << posSet[i][j]->getModelPath() << std::endl;
       posSet[i][j]->loadImage(conf, posSet[i][j]->getModelPath(), posSet[i][j]->getParam());
@@ -158,7 +172,7 @@ int main(int argc, char *argv[]){
       pBar(i*outputNum + j, modelNum*outputNum, 50);
     }
     ofs.close();
-    
+    ofs2.close();
   }
   std::cout << std::endl;
   // save appearance

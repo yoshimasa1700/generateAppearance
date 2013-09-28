@@ -50,7 +50,7 @@ n<pheight>20</pheight>
 <learningmode>0</learningmode>
 <testmode>1</testmode>
 <detectthreshold>3.0</detectthreshold>
-<traindatalistname>dataListInst2.0.txt</traindatalistname>
+<traindatalistname>dataList2.0.txt</traindatalistname>
 <testdatalistname>testDataList.txt</testdatalistname>
 <showgrandtruth>1</showgrandtruth>
 <negativedatapath>negdata</negativedatapath>
@@ -68,7 +68,7 @@ n<pheight>20</pheight>
 <rgbFeature>2</rgbFeature>
 <depthFeature>2</depthFeature>
 <paramradius>3</paramradius>
-<modellistfolder>models</modellistfolder>
+<modellistfolder>models.2013.9.27</modellistfolder>
 <modellistname>models.txt</modellistname>
 <modellearningmode>1</modellearningmode>
 </root>

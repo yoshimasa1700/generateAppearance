@@ -391,7 +391,7 @@ void CGlObjLoader::Display(void)
   glPushMatrix();
 
   glLoadIdentity();
-  glTranslatef(0, 0, -5);	/* to center object down Z */
+  glTranslatef(0, 0, -0.3);	/* to center object down Z */
 
 
 
