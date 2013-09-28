@@ -91,7 +91,7 @@ int main(int argc, char *argv[]){
 
   string execstr = "mkdir -p ";
   for(unsigned int i = 0; i < modelName.size() ; ++i){
-    system((execstr + outputPath + PATH_SEP + modelName[i]).c_str());
+    system((execstr + outputPath + PATH_SEP + instName[i]).c_str());
   }
   
   for(int j = 0; j < modelNum; ++j){
@@ -119,8 +119,8 @@ int main(int argc, char *argv[]){
   filelist << modelNum << std::endl;
   for(unsigned int i = 0; i < posSet.size(); ++i){
     filelist << modelName[i] << std::endl;
-    std::ofstream ofs((outputPath + PATH_SEP + modelName[i] + PATH_SEP + conf.traindatalist).c_str());
-    std::ofstream ofs2((outputPath + PATH_SEP + modelName[i] + PATH_SEP + "dataListInst2.0.txt").c_str());
+    std::ofstream ofs((outputPath + PATH_SEP + instName[i] + PATH_SEP + conf.traindatalist).c_str());
+    std::ofstream ofs2((outputPath + PATH_SEP + instName[i] + PATH_SEP + "dataListInst2.0.txt").c_str());
 
     ofs << outputNum << std::endl;
     ofs2 << outputNum << std::endl;
@@ -164,8 +164,8 @@ int main(int argc, char *argv[]){
       *posSet[i][j]->img[1] += geta;
       std::cout << "kokoya!" << std::endl;
 
-      cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_crop.png", *posSet[i][j]->img[0]);
-      cv::imwrite(outputPath + PATH_SEP + modelName[i] + PATH_SEP + imageName.str() + "_depthcrop.png", *posSet[i][j]->img[1]);
+      cv::imwrite(outputPath + PATH_SEP + instName[i] + PATH_SEP + imageName.str() + "_crop.png", *posSet[i][j]->img[0]);
+      cv::imwrite(outputPath + PATH_SEP + instName[i] + PATH_SEP + imageName.str() + "_depthcrop.png", *posSet[i][j]->img[1]);
 
       delete posSet[i][j];
       
