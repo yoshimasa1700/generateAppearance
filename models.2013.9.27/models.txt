@@ -1,4 +1,8 @@
-13
+3
+watering_pot/watering_pot_1/watering-pot-1.obj watering_pot watering_pot_2
+watering_pot/watering_pot_2/watering-pot-2.obj watering_pot watering_pot_1
+watering_pot/watering_pot_3/watering-pot-3.obj watering_pot watering_pot_3
+
 ball/ball_1/ball-1.obj ball ball_2
 ball/ball_2/ball-2.obj ball ball_1
 ball/ball_3/ball-3.obj ball ball_3
@@ -8,10 +12,7 @@ lint_roller/lint_roller_3/lint-roller-3.obj lint_roller lint_roller_1
 spray/spray_1/spray-1.obj spray spray_2
 spray/spray_2/spray-2.obj spray spray_1
 spray/spray_3/spray-3.obj spray spray_3
-trash_box/trash_box_1/trash-box-1.obj trash_box trash_box_1
-watering_pot/watering_pot_1/watering-pot-1.obj watering_pot watering_pot_2
-watering_pot/watering_pot_2/watering-pot-2.obj watering_pot watering_pot_1
-watering_pot/watering_pot_3/watering-pot-3.obj watering_pot watering_pot_3
+trash_box/trash_box_1/trash-box-1-1.obj trash_box trash_box_1
 
 spray/spray.obj spray
 clock/clock3.obj clock
