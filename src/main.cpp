@@ -32,7 +32,7 @@ int main(int argc, char *argv[]){
     conf.loadConfig(argv[1]);
 
   if(argc < 3)
-    inputPath = "./models";
+    inputPath = "./models_tsuchiya";
   else
     inputPath = argv[2];
   
@@ -59,9 +59,9 @@ int main(int argc, char *argv[]){
   std::string trainModelListPath = conf.modelListFolder + PATH_SEP + conf.modelListName;
 
   boost::lagged_fibonacci1279 genPose;
-  boost::uniform_real<> dst(0, 360);
+  boost::uniform_int<> dst(0, 360);
   boost::variate_generator<boost::lagged_fibonacci1279&,
-			   boost::uniform_real<> > rand(genPose, dst);
+			   boost::uniform_int<> > rand(genPose, dst);
 
   std::ifstream modelList(trainModelListPath.c_str());
   if(!modelList.is_open()){
@@ -160,9 +160,9 @@ int main(int argc, char *argv[]){
 
       cv::Mat geta = cv::Mat::ones(posSet[i][j]->img[1]->rows, posSet[i][j]->img[1]->cols,CV_16UC1) * 350;
 
-      std::cout << "kokoka?" << std::endl;
+      //      std::cout << "kokoka?" << std::endl;
       *posSet[i][j]->img[1] += geta;
-      std::cout << "kokoya!" << std::endl;
+      //      std::cout << "kokoya!" << std::endl;
 
       cv::imwrite(outputPath + PATH_SEP + instName[i] + PATH_SEP + imageName.str() + "_crop.png", *posSet[i][j]->img[0]);
       cv::imwrite(outputPath + PATH_SEP + instName[i] + PATH_SEP + imageName.str() + "_depthcrop.png", *posSet[i][j]->img[1]);

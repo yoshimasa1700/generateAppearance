@@ -1,8 +1,7 @@
-3
+12
 watering_pot/watering_pot_1/watering-pot-1.obj watering_pot watering_pot_2
 watering_pot/watering_pot_2/watering-pot-2.obj watering_pot watering_pot_1
 watering_pot/watering_pot_3/watering-pot-3.obj watering_pot watering_pot_3
-
 ball/ball_1/ball-1.obj ball ball_2
 ball/ball_2/ball-2.obj ball ball_1
 ball/ball_3/ball-3.obj ball ball_3

@@ -60,7 +60,7 @@ ADD_EXECUTABLE(generateAppearance ./src/main.cpp ./src/globjloader.cpp ./src/CCo
 
 # ライブラリとリンクする
 TARGET_LINK_LIBRARIES(generateAppearance glm ${OpenCV_LIBRARIES} ${Boost_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} png jpeg IL ILU ILUT)
-#xTARGET_LINK_LIBRARIES(learning HFMD_core glm ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} png jpeg)#${OpenCV_LIBRARIES} ${Boost_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} glm png jpeg HFMD_core)
+#xTARGET_LINK_LIBRARIES(learning rhfcore glm ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} png jpeg)#${OpenCV_LIBRARIES} ${Boost_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} glm png jpeg rhfcore)
 # バージョン番号の適用
 # SET_TARGET_PROPERTIES(objectPoseEstimation PROPERTIES VERSION ${serial})
 # SET_TARGET_PROPERTIES(learning PROPERTIES VERSION ${serial})

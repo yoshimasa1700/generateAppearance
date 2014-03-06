@@ -68,7 +68,7 @@ n<pheight>20</pheight>
 <rgbFeature>2</rgbFeature>
 <depthFeature>2</depthFeature>
 <paramradius>3</paramradius>
-<modellistfolder>models.2013.9.27</modellistfolder>
+<modellistfolder>models_tsuchiya</modellistfolder>
 <modellistname>models.txt</modellistname>
 <modellearningmode>1</modellearningmode>
 </root>
